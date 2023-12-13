@@ -1,1 +1,2 @@
-web: gunicorn myproject.wsgi:apllication --log-file -
+web: gunicorn servertastypriority.wsgi:application --log-file -
+
