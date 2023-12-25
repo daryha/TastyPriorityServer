@@ -12,7 +12,9 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 import django_heroku
-import dj_database_url
+from pathlib import Path
+import os
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -43,6 +45,12 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'accounts',
+    'stores',
+    'basket_app'
+
+
+ 
+    
     
     
 ]
@@ -55,7 +63,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware', 
     'corsheaders.middleware.CorsMiddleware',
+    
 ]
 
 ROOT_URLCONF = 'myproject.urls'
@@ -73,6 +83,8 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
             ],
         },
+
+        
     },
 ]
 
@@ -136,13 +148,28 @@ EMAIL_PORT =  587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'daryha56@gmail.com'
 EMAIL_HOST_PASSWORD = 'zowi irpt nkwd lffj' 
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 
-CORS_ALLOW_ALL_ORIGINS = True
+
+
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:3000',  # React dev server
+]
+
+CORS_ALLOW_CREDENTIALS = True
+
+
 AUTH_USER_MODEL = 'accounts.CustomUser'
+
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.TokenAuthentication',
     ],
 }
+
+
+MEDIA_URL = '/store_images/'  
+MEDIA_ROOT = os.path.join(BASE_DIR, 'store_images')  
+
