@@ -173,3 +173,4 @@ REST_FRAMEWORK = {
 MEDIA_URL = '/store_images/'  
 MEDIA_ROOT = os.path.join(BASE_DIR, 'store_images')  
 
+PORT = int(os.environ.get('PORT', 8000))
