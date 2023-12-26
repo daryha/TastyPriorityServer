@@ -13,7 +13,6 @@ urlpatterns = [
     path('email_app/send_email/', send_email, name='send_email'),
     path('admin/', admin.site.urls),
     path('', include('accounts.urls')),
-    path('api/', include('basket_app.urls')),
     path('api/', include('stores.urls')), 
     
 

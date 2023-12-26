@@ -46,7 +46,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'accounts',
     'stores',
-    'basket_app'
+    
 
 
  
