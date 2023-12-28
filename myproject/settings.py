@@ -59,11 +59,10 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-     
+    'django.middleware.csrf.CsrfViewMiddleware',
     'corsheaders.middleware.CorsMiddleware',
     
 ]
@@ -151,7 +150,9 @@ EMAIL_HOST_PASSWORD = 'zowi irpt nkwd lffj'
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 
-CSRF_COOKIE_HTTPONLY = True
+CSRF_TRUSTED_ORIGINS = ['https://backendtasty-291f2f48a6f8.herokuapp.com']
+
+
 
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
