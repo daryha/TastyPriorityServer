@@ -59,11 +59,11 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware', 
+     
     'corsheaders.middleware.CorsMiddleware',
     
 ]
@@ -151,10 +151,11 @@ EMAIL_HOST_PASSWORD = 'zowi irpt nkwd lffj'
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 
-
+CSRF_COOKIE_HTTPONLY = True
 
 CORS_ALLOWED_ORIGINS = [
-    'http://localhost:3000',  # React dev server
+    'http://localhost:3000',
+    'https://myserverapp-a354f8daf7d4.herokuapp.com'  # React dev server
 ]
 
 CORS_ALLOW_CREDENTIALS = True
