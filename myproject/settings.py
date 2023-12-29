@@ -156,7 +156,7 @@ CSRF_TRUSTED_ORIGINS = ['https://backendtasty-291f2f48a6f8.herokuapp.com']
 
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
-    'https://fronendtastysdas-6a22bea8897d.herokuapp.com/'  # React dev server
+    'https://fronendtastysdas-6a22bea8897d.herokuapp.com'  # React dev server
 ]
 
 CORS_ALLOW_CREDENTIALS = True
